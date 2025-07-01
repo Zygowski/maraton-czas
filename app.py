@@ -22,7 +22,7 @@ with tab1:
     imiona_damskie = {'anna', 'katarzyna', 'magda', 'ewa', 'agata', 'marta', 'agnieszka', 'joanna'}
     def parse_input(text):
         gender = None
-        
+        pace = None 
         # 1. Sprawdź słowa kluczowe "kobieta", "mężczyzna" itp.
         if re.search(r'\bkobiet\w*\b', text, re.I):
             gender = 'K'  # kobieta
