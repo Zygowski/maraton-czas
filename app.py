@@ -48,12 +48,15 @@ with tab1:
         age = int(age_match.group(1)) if age_match else None
 
         # Szukamy tempa - format mm:ss lub mm,ss
-        pace_match = re.search(r'(\d{1,2})[:.,](\d{2})', text)
-        pace = None
-        if pace_match:
-            minutes = int(pace_match.group(1))
-            seconds = int(pace_match.group(2))
-            pace = minutes + seconds / 60  # tempo w minutach dziesiętnych
+
+        match = re.search(r'(\d{1,2})[:.,](\d{1,2})', text)
+        if match:
+            minutes = int(match.group(1))
+            seconds_str = match.group(2)
+            seconds = int(seconds_str)
+            if len(seconds_str) == 1:
+                seconds *= 10  # np. '5.3' → 5 min 30 sek
+            return minutes + seconds / 60  # tempo w minutach dziesiętnych
 
         return gender, age, pace
 
