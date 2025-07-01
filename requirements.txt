@@ -5,3 +5,4 @@ regex==2024.11.6
 numpy==1.26.4
 pycaret==3.3.2
 openai==1.82.0
+python-dotenv==1.1.0
