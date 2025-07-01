@@ -56,7 +56,7 @@ with tab1:
             seconds = int(seconds_str)
             if len(seconds_str) == 1:
                 seconds *= 10  # np. '5.3' → 5 min 30 sek
-            return minutes + seconds / 60  # tempo w minutach dziesiętnych
+            pace = minutes + seconds / 60 
 
         return gender, age, pace
 
